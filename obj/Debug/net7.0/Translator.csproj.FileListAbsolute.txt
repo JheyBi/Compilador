@@ -1,0 +1,15 @@
+C:\Users\devma\Downloads\Translator\bin\Debug\net7.0\Translator.exe
+C:\Users\devma\Downloads\Translator\bin\Debug\net7.0\Translator.deps.json
+C:\Users\devma\Downloads\Translator\bin\Debug\net7.0\Translator.runtimeconfig.json
+C:\Users\devma\Downloads\Translator\bin\Debug\net7.0\Translator.dll
+C:\Users\devma\Downloads\Translator\bin\Debug\net7.0\Translator.pdb
+C:\Users\devma\Downloads\Translator\obj\Debug\net7.0\Translator.csproj.AssemblyReference.cache
+C:\Users\devma\Downloads\Translator\obj\Debug\net7.0\Translator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\devma\Downloads\Translator\obj\Debug\net7.0\Translator.AssemblyInfoInputs.cache
+C:\Users\devma\Downloads\Translator\obj\Debug\net7.0\Translator.AssemblyInfo.cs
+C:\Users\devma\Downloads\Translator\obj\Debug\net7.0\Translator.csproj.CoreCompileInputs.cache
+C:\Users\devma\Downloads\Translator\obj\Debug\net7.0\Translator.dll
+C:\Users\devma\Downloads\Translator\obj\Debug\net7.0\refint\Translator.dll
+C:\Users\devma\Downloads\Translator\obj\Debug\net7.0\Translator.pdb
+C:\Users\devma\Downloads\Translator\obj\Debug\net7.0\Translator.genruntimeconfig.cache
+C:\Users\devma\Downloads\Translator\obj\Debug\net7.0\ref\Translator.dll

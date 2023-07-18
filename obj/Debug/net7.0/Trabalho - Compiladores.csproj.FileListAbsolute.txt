@@ -1,0 +1,15 @@
+C:\Users\devma\Downloads\Trabalho - Compiladores\bin\Debug\net7.0\Trabalho - Compiladores.exe
+C:\Users\devma\Downloads\Trabalho - Compiladores\bin\Debug\net7.0\Trabalho - Compiladores.deps.json
+C:\Users\devma\Downloads\Trabalho - Compiladores\bin\Debug\net7.0\Trabalho - Compiladores.runtimeconfig.json
+C:\Users\devma\Downloads\Trabalho - Compiladores\bin\Debug\net7.0\Trabalho - Compiladores.dll
+C:\Users\devma\Downloads\Trabalho - Compiladores\bin\Debug\net7.0\Trabalho - Compiladores.pdb
+C:\Users\devma\Downloads\Trabalho - Compiladores\obj\Debug\net7.0\Trabalho - Compiladores.csproj.AssemblyReference.cache
+C:\Users\devma\Downloads\Trabalho - Compiladores\obj\Debug\net7.0\Trabalho - Compiladores.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\devma\Downloads\Trabalho - Compiladores\obj\Debug\net7.0\Trabalho - Compiladores.AssemblyInfoInputs.cache
+C:\Users\devma\Downloads\Trabalho - Compiladores\obj\Debug\net7.0\Trabalho - Compiladores.AssemblyInfo.cs
+C:\Users\devma\Downloads\Trabalho - Compiladores\obj\Debug\net7.0\Trabalho - Compiladores.csproj.CoreCompileInputs.cache
+C:\Users\devma\Downloads\Trabalho - Compiladores\obj\Debug\net7.0\Trabalho - Compiladores.dll
+C:\Users\devma\Downloads\Trabalho - Compiladores\obj\Debug\net7.0\refint\Trabalho - Compiladores.dll
+C:\Users\devma\Downloads\Trabalho - Compiladores\obj\Debug\net7.0\Trabalho - Compiladores.pdb
+C:\Users\devma\Downloads\Trabalho - Compiladores\obj\Debug\net7.0\Trabalho - Compiladores.genruntimeconfig.cache
+C:\Users\devma\Downloads\Trabalho - Compiladores\obj\Debug\net7.0\ref\Trabalho - Compiladores.dll

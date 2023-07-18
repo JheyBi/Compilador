@@ -10,7 +10,7 @@ num = ['0','1','2','3','4','5','6','7','8','9']
 
 def le_entrada():
     n = str(input("Digite a entrada: "))
-    n = n + '$'
+    n = n + '\0'
     return n
 
 
@@ -44,7 +44,7 @@ def X():
         match("-")
         E()
     else:
-        if LA != "$" and LA != ")":
+        if LA != "\0" and LA != ")":
             print("ERRO: ", LA, " não é um token válido, esperava + ou -")
             exit()
 
@@ -62,7 +62,7 @@ def Y():
         match("/")
         E()
     else:
-        if LA != "$" and LA != ")" and LA != "+" and LA != "-":
+        if LA != "\0" and LA != ")" and LA != "+" and LA != "-":
             print("ERRO: ", LA, " não é um token válido, esperava * ou /")
             exit()  
 
@@ -75,13 +75,13 @@ def F():
     elif LA in num:
         match(LA)
     else:
-        if LA != "$" and LA != ")" and LA != "+" and LA != "-" and LA != "*" and LA != "/":
+        if LA != "\0" and LA != ")" and LA != "+" and LA != "-" and LA != "*" and LA != "/":
             print("ERRO: ", LA, " não é um token válido, esperava ( ou 0")
             exit()
 
 
 E()
-if LA == "$":
+if LA == "\0":
     print("Aceito")
 else:
     print("Não aceito")
