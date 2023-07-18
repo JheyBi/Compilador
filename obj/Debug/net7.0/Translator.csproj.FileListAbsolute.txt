@@ -13,3 +13,18 @@ C:\Users\devma\Downloads\Translator\obj\Debug\net7.0\refint\Translator.dll
 C:\Users\devma\Downloads\Translator\obj\Debug\net7.0\Translator.pdb
 C:\Users\devma\Downloads\Translator\obj\Debug\net7.0\Translator.genruntimeconfig.cache
 C:\Users\devma\Downloads\Translator\obj\Debug\net7.0\ref\Translator.dll
+D:\.Compilador Della\bin\Debug\net7.0\Translator.exe
+D:\.Compilador Della\bin\Debug\net7.0\Translator.deps.json
+D:\.Compilador Della\bin\Debug\net7.0\Translator.runtimeconfig.json
+D:\.Compilador Della\bin\Debug\net7.0\Translator.dll
+D:\.Compilador Della\bin\Debug\net7.0\Translator.pdb
+D:\.Compilador Della\obj\Debug\net7.0\Translator.csproj.AssemblyReference.cache
+D:\.Compilador Della\obj\Debug\net7.0\Translator.GeneratedMSBuildEditorConfig.editorconfig
+D:\.Compilador Della\obj\Debug\net7.0\Translator.AssemblyInfoInputs.cache
+D:\.Compilador Della\obj\Debug\net7.0\Translator.AssemblyInfo.cs
+D:\.Compilador Della\obj\Debug\net7.0\Translator.csproj.CoreCompileInputs.cache
+D:\.Compilador Della\obj\Debug\net7.0\Translator.dll
+D:\.Compilador Della\obj\Debug\net7.0\refint\Translator.dll
+D:\.Compilador Della\obj\Debug\net7.0\Translator.pdb
+D:\.Compilador Della\obj\Debug\net7.0\Translator.genruntimeconfig.cache
+D:\.Compilador Della\obj\Debug\net7.0\ref\Translator.dll

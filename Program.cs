@@ -7,15 +7,18 @@ namespace Translator // Note: actual namespace depends on the project name.
         
         static void Main(string[] args)
         {
-            Token l1 = new Token(ETokenType.NUMBER, 22);
-            Token l2 = new Token(ETokenType.SUM, 0);
-
+            // Entrada de variavel
+            Console.WriteLine("Digite a expressão a ser analisada: ");
             String? input = Console.ReadLine();
+
+            // Analisador lexico
+            var lexer = new Lexer(input+"\0");
+
+            // Analisador sintatico
+            var sintatic = new Sintatic(lexer);
             
-            var sintatic = new Sintatic();
-            var lexer = sintatic.le_entrada(input);
-            sintatic.match(lexer, l1);
-            sintatic.match(lexer, l2);
+            // Inicia a analise sintatica
+            sintatic.Parse();
         }
     }
 }

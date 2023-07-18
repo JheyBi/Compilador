@@ -13,7 +13,6 @@ def le_entrada():
     n = n + '\0'
     return n
 
-
 entrada = le_entrada()
 i = 0
 LA = entrada[i]
