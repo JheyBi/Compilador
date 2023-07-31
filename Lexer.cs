@@ -1,5 +1,6 @@
 namespace Translator {
     public class Lexer {
+
         private String _input;
         private Int32 _position;
         private Char _currentChar;
@@ -32,6 +33,27 @@ namespace Translator {
                 Advance();
             }
             return Int32.Parse(result);
+        }
+
+        private char NextChar() {
+            if (_position + 1 > _input.Length - 1) {
+                return '\0';
+            } else {
+                return _input[_position + 1];
+            }
+        }
+
+        private bool testSufix(String sufix) {
+            char [] sufixArray = sufix.ToCharArray();
+            var test = true;
+            foreach (char s in sufixArray){
+                if (s != NextChar()){
+                    test = false;
+                }
+                Advance();
+            }
+            return test;
+                
         }
 
         public Token GetNextToken() {
@@ -67,6 +89,24 @@ namespace Translator {
                     Advance();
                     return new Token(ETokenType.CLOSE);
                 }
+                if (_currentChar == '=') {
+                    Advance();
+                    return new Token(ETokenType.AT);
+                }
+                if (_currentChar == 'w') {
+                    if (testSufix("rite")) {
+                        return new Token(ETokenType.OUTPUT);
+                    }
+                }
+                if (_currentChar == 'r') {
+                    if (testSufix("ead")) {
+                        return new Token(ETokenType.INPUT);
+                    }
+                }
+                // if (_currentChar == ';') {
+                //     Advance();
+                //     return new Token(ETokenType.EOL);
+                // }
                 throw new Exception("Char Inválido"); // tratar adequadamente
             }
             return new Token(ETokenType.EOF);
