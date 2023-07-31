@@ -67,7 +67,7 @@ namespace Translator {
                     Advance();
                     return new Token(ETokenType.CLOSE);
                 }
-                throw new Exception("Invalid Caracter"); // tratar adequadamente
+                throw new Exception("Char Inválido"); // tratar adequadamente
             }
             return new Token(ETokenType.EOF);
         }

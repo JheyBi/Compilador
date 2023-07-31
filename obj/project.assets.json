@@ -8,19 +8,19 @@
     "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\joaod\\.nuget\\packages\\": {}
+    "C:\\Users\\devma\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\.Compilador Della\\Translator.csproj",
+      "projectUniqueName": "C:\\Users\\devma\\Downloads\\Translator\\Translator.csproj",
       "projectName": "Translator",
-      "projectPath": "D:\\.Compilador Della\\Translator.csproj",
-      "packagesPath": "C:\\Users\\joaod\\.nuget\\packages\\",
-      "outputPath": "D:\\.Compilador Della\\obj\\",
+      "projectPath": "C:\\Users\\devma\\Downloads\\Translator\\Translator.csproj",
+      "packagesPath": "C:\\Users\\devma\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\devma\\Downloads\\Translator\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\joaod\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\devma\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -59,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.305\\RuntimeIdentifierGraph.json"
       }
     }
   }
