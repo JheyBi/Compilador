@@ -1,15 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "oIlCTuOJ/DvaATlHoQ4ITA8QIc2FCLSgXKrWqZD5aTrva3CtB3ZVjIiG4H0FSijuYkfiYHC+kAqUw53m/XkGug==",
+  "dgSpecHash": "jpEoc2g00VmuIkxy8H30jOWGIm9yCaBDG1EWkVVQCSyQW4RWkRz9ikas13WZ3YS4sBX9ZL0V8ZsO4xFTbUFRQw==",
   "success": true,
-  "projectFilePath": "c:\\Users\\devma\\Downloads\\Translator\\Translator.csproj",
+  "projectFilePath": "C:\\Users\\devma\\Downloads\\Translator\\Translator.csproj",
   "expectedPackageFiles": [],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema ao ler o arquivo de cache c:\\Users\\devma\\Downloads\\Translator\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

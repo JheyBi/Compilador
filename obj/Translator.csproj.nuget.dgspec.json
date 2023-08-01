@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\devma\\Downloads\\Translator\\Translator.csproj": {}
+    "C:\\Users\\devma\\Downloads\\Translator\\Translator.csproj": {}
   },
   "projects": {
-    "c:\\Users\\devma\\Downloads\\Translator\\Translator.csproj": {
+    "C:\\Users\\devma\\Downloads\\Translator\\Translator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\devma\\Downloads\\Translator\\Translator.csproj",
+        "projectUniqueName": "C:\\Users\\devma\\Downloads\\Translator\\Translator.csproj",
         "projectName": "Translator",
-        "projectPath": "c:\\Users\\devma\\Downloads\\Translator\\Translator.csproj",
+        "projectPath": "C:\\Users\\devma\\Downloads\\Translator\\Translator.csproj",
         "packagesPath": "C:\\Users\\devma\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\devma\\Downloads\\Translator\\obj\\",
+        "outputPath": "C:\\Users\\devma\\Downloads\\Translator\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\devma\\AppData\\Roaming\\NuGet\\NuGet.Config"
