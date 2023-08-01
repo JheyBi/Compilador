@@ -4,5 +4,12 @@
   "success": true,
   "projectFilePath": "c:\\Users\\devma\\Downloads\\Translator\\Translator.csproj",
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema ao ler o arquivo de cache c:\\Users\\devma\\Downloads\\Translator\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
