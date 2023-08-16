@@ -1,31 +1,40 @@
 namespace Translator {
     public class Lexer {
 
-        private String _input;
-        private Int32 _position;
+        // private String _input;
+        public String Filename{get; protected set;}
+        // private Int32 _position;
         private Char? _currentChar;
         public Int32 Line{get;protected set;}
         public Int32 Column{get;protected set;}
 
         public SymbolTable SymbolTable {get; protected set;}
+        public StreamReader _reader;
 
-        public Lexer(String input, SymbolTable? st=null) {
-            _input = input;
+        public Lexer(/*String input*/String filename, SymbolTable? st=null) {
+            // _input = input;
+            Filename = filename;
             if(st==null){
                 st = new SymbolTable();
             }
             SymbolTable = st;
-            _position = 0;
-            _currentChar = _input[_position];
+            _reader = new StreamReader(Filename);
+            // _position = 0;
+            // _currentChar = _input[_position];
             Line = Column = 1;
         }
 
         private void Advance() {
-            _position++;
-            if (_position > _input.Length - 1) {
+            // Column++;
+            // Char c = '\0';
+            // if (!_reader.EndOfStream)
+            //     c = (Char) _reader.Read();
+            // return c;
+            Column++;
+            if (_reader.EndOfStream) {
                 _currentChar = '\0';
             } else {
-                _currentChar = _input[_position];
+                _currentChar = (Char) _reader.Read();
             }
         }
 
@@ -109,11 +118,10 @@ namespace Translator {
                         return new Token(ETokenType.INPUT);
                     }
                 }
-                
-                if (_currentChar == ';') {
-                    Advance();
-                    return new Token(ETokenType.EOL);
+                if(_currentChar == null){
+                    Console.WriteLine("Char: null");
                 }
+                Console.WriteLine(_currentChar);
                 throw new Exception("Char Inválido"); // tratar adequadamente
             
         }
