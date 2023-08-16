@@ -15,9 +15,8 @@ namespace Translator {
         // Verifica se a entrada é válida
         public int Parse(){
             Console.WriteLine("Entrou no PARSE");
-            var res = 1;
-            Teste();
-            // var res = E();
+            // Teste();
+            var res = E();
             
             if(_LA.Type != ETokenType.EOF){
                 throw new Exception("ERRO de sintaxe: " + _LA.Type + " não esperado, esperava EOF");
@@ -31,28 +30,27 @@ namespace Translator {
 
         public void Match(ETokenType token){
             // Verificar se o token é o esperado
-            Console.WriteLine("LA: " + _LA);
+            // Console.WriteLine("LA: " + _LA);
             if(_LA.Type == token){
-                //Console.WriteLine("Token: " + _LA + " reconhecido");
+                // Console.WriteLine("Token: " + _LA + " reconhecido");
                 _LA = _lexer.GetNextToken();
-                //Console.WriteLine("Proximo Token: " + _LA + " a ser analisado");
+                // Console.WriteLine("Proximo Token: " + _LA + " a ser analisado");
             }else{
                 throw new Exception("Erro de sintaxe");
             }
         }
 
-        public void Teste(){
-            if(_LA.Type == ETokenType.EOL){
-                Match(ETokenType.EOL);
-            }
-        }
+        // public void Teste(){
+        //     if(_LA.Type == ETokenType.EOL){
+        //         Match(ETokenType.EOL);
+        //     }
+        // }
 
         public int E(){
             //Console.WriteLine("Estado: E ->  LA:" + _LA.Value);
             var res1 = T();
-            var res2 = X(res1);
-            Console.WriteLine("Estou no E e T é: " + res1 + " e X é: " + res2);
-            return res2;
+            Console.WriteLine("Estou no E e T é: " + res1);
+            return X(res1);
         }
 
         public int X(int t){
@@ -81,23 +79,24 @@ namespace Translator {
         public int T(){
             //Console.WriteLine("Estado: T ->  LA:" + _LA.Value);
             var res1 = F();
-            var res2 = Y(res1);
-            Console.WriteLine("Estou no T e F é: " + res1 + " e Y é: " + res2);
-            return res2;
+            
+            Console.WriteLine("Estou no T e F é: " + res1);
+            return Y(res1);
         }
 
         public int Y(int t){
-            //Console.WriteLine("Estado: Y ->  LA:" + _LA.Value);
+            // Console.WriteLine("Estado: Y ->  LA:" + _LA.Value);
             if(_LA.Type==ETokenType.MUL){
+                
                 Match(ETokenType.MUL);
-                var res = E();
+                var res = T();
                 Console.WriteLine("Estou no Y(*) e t é: " + t + " e E é: " + res);
                 return t * res;
 
             }
             else if(_LA.Type==ETokenType.DIV){
                 Match(ETokenType.DIV);
-                var res = E();
+                var res = T();
                 Console.WriteLine("Estou no X(/) e t é: " + t + " e E é: " + res);
                 return t / res;
             }
@@ -110,7 +109,7 @@ namespace Translator {
         }
 
         public int F(){
-            Console.WriteLine("Estado: F ->  LA:" + _LA.Value);
+            // Console.WriteLine("Estado: F ->  LA:" + _LA.Value);
             if(_LA.Type==ETokenType.NUMBER){
                 var res = _LA.Value;
                 Match(ETokenType.NUMBER);
