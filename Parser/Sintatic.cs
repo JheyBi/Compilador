@@ -15,9 +15,7 @@ namespace Translator {
         // Verifica se a entrada é válida
         public int Parse(){
             Console.WriteLine("Entrou no PARSE");
-            var res = 1;
-            Teste();
-            // var res = E();
+            var res = E();
             
             if(_LA.Type != ETokenType.EOF){
                 throw new Exception("ERRO de sintaxe: " + _LA.Type + " não esperado, esperava EOF");
@@ -41,13 +39,70 @@ namespace Translator {
             }
         }
 
-        public void Teste(){
-            if(_LA.Type == ETokenType.EOL){
-                Match(ETokenType.EOL);
+        // public void Teste(){
+        //     if(_LA.Type == ETokenType.EOL){
+        //         Match(ETokenType.EOL);
+        //     }
+        // }
+
+        public void Prog(){ // Prog: Line A
+            Line();
+            A();
+            
+        }
+
+        public void Line(){ // Line: stmt EOL
+            Stmt();
+            Match(ETokenType.EOL);
+        }
+
+        public void A(){ //A: EOF | Prog
+            if(_LA.Type==ETokenType.EOF){
+                Match(ETokenType.EOF);
+            }
+            else{
+                Prog();
             }
         }
 
-        public int E(){
+        public void Stmt(){ //Stmt: in | out | atrib
+            if(_LA.Type==ETokenType.INPUT){
+                In();
+            }
+            else if(_LA.Type==ETokenType.OUTPUT){
+                Out();
+            }
+            else if(_LA.Type==ETokenType.VAR){
+                Atrib();
+            }
+            else{
+                throw new Exception("ERRO de sintaxe: " + _LA.Type + " não esperado, esperava INPUT, OUTPUT ou VAR");
+            }
+        }
+
+        public void In(){ //in: INPUT VAR
+            Match(ETokenType.INPUT);
+            Match(ETokenType.VAR);
+        }
+
+        public void Out(){ //out    : OUTPUT VAR
+            Match(ETokenType.OUTPUT);
+            Match(ETokenType.VAR);
+        }
+
+        public void Atrib(){//atrib  : VAR AT expr
+            Match(ETokenType.VAR);
+            Match(ETokenType.AT);
+            var res = E();
+            //Colocar a variavel na tabela
+
+            //...
+            //cpa colocar ess throw
+            Console.WriteLine("Resultado: " + res);
+        }
+
+
+        public int E(){ //expr   : term Y
             //Console.WriteLine("Estado: E ->  LA:" + _LA.Value);
             var res1 = T();
             var res2 = X(res1);
@@ -55,7 +110,7 @@ namespace Translator {
             return res2;
         }
 
-        public int X(int t){
+        public int X(int t){ //X      : vazio | + expr | - expr
             //Console.WriteLine("Estado: X ->  LA:" + _LA.Value);
             if(_LA.Type==ETokenType.SUM){
                 Match(ETokenType.SUM);
@@ -78,7 +133,7 @@ namespace Translator {
             return t;
         }
 
-        public int T(){
+        public int T(){ //term   : factZ
             //Console.WriteLine("Estado: T ->  LA:" + _LA.Value);
             var res1 = F();
             var res2 = Y(res1);
@@ -86,7 +141,7 @@ namespace Translator {
             return res2;
         }
 
-        public int Y(int t){
+        public int Y(int t){ // Y     : vazio | * term | / term
             //Console.WriteLine("Estado: Y ->  LA:" + _LA.Value);
             if(_LA.Type==ETokenType.MUL){
                 Match(ETokenType.MUL);
@@ -109,7 +164,7 @@ namespace Translator {
             return t;
         }
 
-        public int F(){
+        public int F(){ //fact   : NUM | VAR | OE expr CE
             Console.WriteLine("Estado: F ->  LA:" + _LA.Value);
             if(_LA.Type==ETokenType.NUMBER){
                 var res = _LA.Value;
