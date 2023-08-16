@@ -1,0 +1,6 @@
+read $x
+read $x
+$y = 2
+$z = 2
+$w = 2+2*2
+write $w
