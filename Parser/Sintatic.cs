@@ -29,11 +29,11 @@ namespace Translator {
 
         public void Match(ETokenType token){
             // Verificar se o token é o esperado
-            Console.WriteLine("LA: " + _LA);
+            // Console.WriteLine("LA: " + _LA);
             if(_LA.Type == token){
-                //Console.WriteLine("Token: " + _LA + " reconhecido");
+                // Console.WriteLine("Token: " + _LA + " reconhecido");
                 _LA = _lexer.GetNextToken();
-                //Console.WriteLine("Proximo Token: " + _LA + " a ser analisado");
+                // Console.WriteLine("Proximo Token: " + _LA + " a ser analisado");
             }else{
                 throw new Exception("Erro de sintaxe");
             }
@@ -105,9 +105,8 @@ namespace Translator {
         public int E(){ //expr   : term Y
             //Console.WriteLine("Estado: E ->  LA:" + _LA.Value);
             var res1 = T();
-            var res2 = X(res1);
-            Console.WriteLine("Estou no E e T é: " + res1 + " e X é: " + res2);
-            return res2;
+            Console.WriteLine("Estou no E e T é: " + res1);
+            return X(res1);
         }
 
         public int X(int t){ //X      : vazio | + expr | - expr
@@ -136,23 +135,24 @@ namespace Translator {
         public int T(){ //term   : factZ
             //Console.WriteLine("Estado: T ->  LA:" + _LA.Value);
             var res1 = F();
-            var res2 = Y(res1);
-            Console.WriteLine("Estou no T e F é: " + res1 + " e Y é: " + res2);
-            return res2;
+            
+            Console.WriteLine("Estou no T e F é: " + res1);
+            return Y(res1);
         }
 
         public int Y(int t){ // Y     : vazio | * term | / term
             //Console.WriteLine("Estado: Y ->  LA:" + _LA.Value);
             if(_LA.Type==ETokenType.MUL){
+                
                 Match(ETokenType.MUL);
-                var res = E();
+                var res = T();
                 Console.WriteLine("Estou no Y(*) e t é: " + t + " e E é: " + res);
                 return t * res;
 
             }
             else if(_LA.Type==ETokenType.DIV){
                 Match(ETokenType.DIV);
-                var res = E();
+                var res = T();
                 Console.WriteLine("Estou no X(/) e t é: " + t + " e E é: " + res);
                 return t / res;
             }
