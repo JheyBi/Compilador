@@ -62,7 +62,6 @@ namespace Translator {
         }
 
         public Token GetNextToken() {
-
                 if (_currentChar == '\0') {
                     return new Token(ETokenType.EOF);
                 }
@@ -121,8 +120,8 @@ namespace Translator {
                 if(_currentChar == null){
                     Console.WriteLine("Char: null");
                 }
-                Console.WriteLine(_currentChar);
-                throw new Exception("Char Inválido"); // tratar adequadamente
+
+                throw new InvalidChar(Line, _currentChar??' '); // tratar adequadamente
             
         }
     }
