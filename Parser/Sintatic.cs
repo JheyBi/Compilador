@@ -242,7 +242,7 @@ namespace Translator {
             }
             
             else{
-                if(_LA.Type!=ETokenType.EOF && _LA.Type!=ETokenType.CLOSE && _LA.Type!=ETokenType.EOL){
+                if(!TestFollow(ETokenType.EOF, ETokenType.CLOSE, ETokenType.EOL)){
                     throw new Exception("ERRO de sintaxe: " + _LA.Type + " não esperado, esperava + ou -");
                 }
             }
@@ -285,7 +285,7 @@ namespace Translator {
                 return t / res;
             }
             else{
-                if(_LA.Type!=ETokenType.EOF && _LA.Type!=ETokenType.CLOSE && _LA.Type!=ETokenType.SUM && _LA.Type!=ETokenType.SUB && _LA.Type!=ETokenType.EOL){
+                if(!TestFollow(ETokenType.EOF, ETokenType.CLOSE, ETokenType.SUM, ETokenType.SUB, ETokenType.EOL)){
                     throw new Exception("ERRO de sintaxe: " + _LA.Type + " não esperado, esperava * ou /");
                 }
             }
@@ -326,11 +326,15 @@ namespace Translator {
                 return res;
             }
             else{
-                if(_LA.Type!=ETokenType.EOF && _LA.Type!=ETokenType.CLOSE && _LA.Type!=ETokenType.SUM && _LA.Type!=ETokenType.SUB && _LA.Type!=ETokenType.MUL && _LA.Type!=ETokenType.DIV){
+                if(!TestFollow(ETokenType.EOF, ETokenType.CLOSE, ETokenType.SUM, ETokenType.SUB, ETokenType.MUL, ETokenType.DIV)){
                     throw new Exception("ERRO de sintaxe: " + _LA.Type + " não esperado, esperava número ou (");
                 }
             }
             return 0;
+        }
+
+        private bool TestFollow(params ETokenType[] list) {
+            return list.ToList().Exists(t => _LA.Type == t);
         }
 
     }
